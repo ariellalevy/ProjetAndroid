@@ -1,6 +1,8 @@
 package com.example.ariellalevy.projetandroid_levy_ariella_grp31.vue;
 
 import android.app.Activity;
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -26,7 +28,8 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Controller controller = new Controller(this);
+        SharedPreferences sharedPreferences = this.getSharedPreferences("user_prefs", Context.MODE_PRIVATE);
+        Controller controller = new Controller(this,sharedPreferences);
         controller.start();
     }
 
