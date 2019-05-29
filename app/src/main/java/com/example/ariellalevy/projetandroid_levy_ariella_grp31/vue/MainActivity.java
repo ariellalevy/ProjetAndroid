@@ -41,10 +41,4 @@ public class MainActivity extends Activity {
         adapter = new Adapter(charactersList);
         recyclerView.setAdapter(adapter);
     }
-
-    protected void onListItemClick(ListView l, View v, int position, long id){
-        Toast.makeText(getApplicationContext(), "teste", Toast.LENGTH_SHORT).show();
-        Intent main2Activity = new Intent(MainActivity.this, Main2Activity.class);
-        startActivity(main2Activity);
-    }
 }

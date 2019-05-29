@@ -1,43 +1,26 @@
 package com.example.ariellalevy.projetandroid_levy_ariella_grp31.controler;
 
-import android.content.SharedPreferences;
-import android.text.TextUtils;
-
 import com.example.ariellalevy.projetandroid_levy_ariella_grp31.HarryPotterRestAPI;
 import com.example.ariellalevy.projetandroid_levy_ariella_grp31.model.HarryPotterCharacters;
 import com.example.ariellalevy.projetandroid_levy_ariella_grp31.vue.Main2Activity;
-import com.example.ariellalevy.projetandroid_levy_ariella_grp31.vue.MainActivity;
+
+import android.content.SharedPreferences;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import com.google.gson.reflect.TypeToken;
-
-import java.lang.reflect.Type;
-import java.util.ArrayList;
-import java.util.List;
-
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
-import retrofit2.http.GET;
 
-
-public class Controller implements Callback<List<HarryPotterCharacters>> {
-
+public class Controller2 implements Callback<HarryPotterCharacters> {
     static final String BASE_URL = "https://raw.githubusercontent.com/ariellalevy/ariellalevy.github.io/master/";
-    private MainActivity view;
-    private Main2Activity view2;
+    private Main2Activity view;
     private SharedPreferences sharedPreferences;
-    private String donnee="characters";
+    private String donnee;
 
-    public Controller(MainActivity view, SharedPreferences sharedPreferences) {
+    public Controller2(Main2Activity view, SharedPreferences sharedPreferences, String donnee) {
         this.view = view;
-        this.sharedPreferences = sharedPreferences;
-    }
-
-    public Controller(Main2Activity view2, SharedPreferences sharedPreferences, String donnee) {
-        this.view2 = view2;
         this.sharedPreferences = sharedPreferences;
         this.donnee = donnee;
     }
@@ -53,29 +36,30 @@ public class Controller implements Callback<List<HarryPotterCharacters>> {
                 .build();
 
         HarryPotterRestAPI harryPotterRestAPI = retrofit.create(HarryPotterRestAPI.class);
-        Call<List<HarryPotterCharacters>> call =  harryPotterRestAPI.getCharactersList(donnee);
+
+        Call<HarryPotterCharacters> call = harryPotterRestAPI.getCharacters(donnee);
         call.enqueue(this);
     }
 
     @Override
-    public void onResponse(Call<List<HarryPotterCharacters>> call, Response<List<HarryPotterCharacters>> response) {
+    public void onResponse(Call<HarryPotterCharacters> call, Response<HarryPotterCharacters> response) {
         if(response.isSuccessful()) {
-            List<HarryPotterCharacters> HarryPotterList = response.body();
-            storeData(HarryPotterList);
-            view.showList(HarryPotterList);
+            HarryPotterCharacters HarryPotter = response.body();
+            //storeData(HarryPotterList);
+            view.showCharacters(HarryPotter);
         } else {
             System.out.println(response.errorBody());
         }
     }
 
     @Override
-    public void onFailure(Call<List<HarryPotterCharacters>> call, Throwable t) {
-        List<HarryPotterCharacters> HarryPotterList = getDataFromCache();
-        view.showList(HarryPotterList);
+    public void onFailure(Call<HarryPotterCharacters> call, Throwable t) {
+        //List<HarryPotterCharacters> HarryPotterList = getDataFromCache();
+        //view.showCharacters(HarryPotterList);
         t.printStackTrace();
     }
 
-    private void storeData(List<HarryPotterCharacters> HarryPotterList) {
+    /*private void storeData(List<HarryPotterCharacters> HarryPotterList) {
         Gson gson = new Gson();
         String HarryPotterListString = gson.toJson(HarryPotterList);
         sharedPreferences
@@ -92,5 +76,5 @@ public class Controller implements Callback<List<HarryPotterCharacters>> {
             return HarryPotterList;
         }
         return new ArrayList<>();
-    }
+    }*/
 }

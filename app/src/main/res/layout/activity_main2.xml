@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Main2Activity">
+    tools:context=".vue.Main2Activity">
 
 
     <RelativeLayout
@@ -12,34 +12,137 @@
         android:layout_height="match_parent">
 
         <ImageView
-            android:id="@+id/imageView2"
-            android:layout_width="99dp"
-            android:layout_height="191dp"
-            app:srcCompat="@drawable/coverhp1" />
-
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="257dp"
-            android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
-            android:layout_marginTop="44dp"
-            android:layout_marginEnd="0dp"
-            android:layout_marginRight="0dp"
-            android:text="" />
-
-        <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/icon"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_alignParentBottom="true"
             android:layout_alignParentTop="true"
-            android:layout_alignParentEnd="true"
+            android:layout_alignParentLeft="true"
+            android:layout_gravity="left"
+            android:contentDescription="TODO"
+            android:src="@mipmap/ic_launcher" />
+
+        <TextView
+            android:id="@+id/secondLine"
+            android:layout_width="fill_parent"
+            android:layout_height="26dip"
+            android:layout_alignParentBottom="true"
             android:layout_alignParentRight="true"
-            android:layout_marginTop="188dp"
-            android:layout_marginEnd="0dp"
-            android:layout_marginRight="0dp"
-            android:text="" />
+            android:layout_toRightOf="@id/icon"
+            android:ellipsize="marquee"
+            android:text="Description"
+            android:textSize="12sp"
+            android:singleLine="true" />
+
+        <TextView
+            android:id="@+id/troisiemeLine"
+            android:layout_width="fill_parent"
+            android:layout_height="26dip"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_toRightOf="@id/icon"
+            android:ellipsize="marquee"
+            android:text="Description"
+            android:textSize="12sp"
+            android:singleLine="true" />
+
+        <TextView
+            android:id="@+id/quatriemeLine"
+            android:layout_width="fill_parent"
+            android:layout_height="26dip"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_toRightOf="@id/icon"
+            android:ellipsize="marquee"
+            android:text="Description"
+            android:textSize="12sp"
+            android:singleLine="true" />
+
+        <TextView
+            android:id="@+id/cinquiemeLine"
+            android:layout_width="fill_parent"
+            android:layout_height="26dip"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_toRightOf="@id/icon"
+            android:ellipsize="marquee"
+            android:text="Description"
+            android:textSize="12sp"
+            android:singleLine="true" />
+
+        <TextView
+            android:id="@+id/sixemeLine"
+            android:layout_width="fill_parent"
+            android:layout_height="26dip"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_toRightOf="@id/icon"
+            android:ellipsize="marquee"
+            android:text="Description"
+            android:textSize="12sp"
+            android:singleLine="true" />
+
+        <TextView
+            android:id="@+id/septiemeLine"
+            android:layout_width="fill_parent"
+            android:layout_height="26dip"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_toRightOf="@id/icon"
+            android:ellipsize="marquee"
+            android:text="Description"
+            android:textSize="12sp"
+            android:singleLine="true" />
+
+        <TextView
+            android:id="@+id/huitiemeLine"
+            android:layout_width="fill_parent"
+            android:layout_height="26dip"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_toRightOf="@id/icon"
+            android:ellipsize="marquee"
+            android:text="Description"
+            android:textSize="12sp"
+            android:singleLine="true" />
+
+        <TextView
+            android:id="@+id/neuviemeLine"
+            android:layout_width="fill_parent"
+            android:layout_height="26dip"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_toRightOf="@id/icon"
+            android:ellipsize="marquee"
+            android:text="Description"
+            android:textSize="12sp"
+            android:singleLine="true" />
+
+        <TextView
+            android:id="@+id/dixemeLine"
+            android:layout_width="fill_parent"
+            android:layout_height="26dip"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_toRightOf="@id/icon"
+            android:ellipsize="marquee"
+            android:text="Description"
+            android:textSize="12sp"
+            android:singleLine="true" />
+
+        <TextView
+            android:id="@+id/firstLine"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/secondLine"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignWithParentIfMissing="true"
+            android:layout_toRightOf="@id/icon"
+            android:gravity="center_vertical"
+            android:text="Example application"
+            android:textSize="16sp" />
+
 
     </RelativeLayout>
 </android.support.constraint.ConstraintLayout>
