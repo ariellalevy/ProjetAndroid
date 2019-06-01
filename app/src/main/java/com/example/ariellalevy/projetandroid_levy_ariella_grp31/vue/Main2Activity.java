@@ -8,6 +8,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -50,14 +51,14 @@ public class Main2Activity extends Activity {
         txtDixemeLine = (TextView) findViewById(R.id.dixemeLine);
         Picasso.with(this).load(characters.getImage()).into(imageView);
         txtFirstLine.setText(characters.getName());
-        txtSecondLine.setText(characters.getActor());
-        txtTroisiemeLine.setText(characters.getSpecies());
-        txtQuatriemeLine.setText(characters.getGender());
-        txtCinquiemeLine.setText(characters.getDateOfBirth());
-        txtSixemeLine.setText(characters.getAncestry());
-        txtSeptiemeLine.setText(characters.getHouse());
-        txtHuitiemeLine.setText(characters.getPatronus());
-        txtNeuviemeLine.setText(characters.getHairColour());
-        txtDixemeLine.setText(characters.getEyeColour());
+        txtSecondLine.setText("Actor: " + characters.getActor());
+        txtTroisiemeLine.setText("Species: " + characters.getSpecies());
+        txtQuatriemeLine.setText("Gender: " + characters.getGender());
+        txtCinquiemeLine.setText("Date of birthday: " + characters.getDateOfBirth());
+        txtSixemeLine.setText("Ancestry: " + characters.getAncestry());
+        txtSeptiemeLine.setText("House: " + characters.getHouse());
+        txtHuitiemeLine.setText("Patronus: " + characters.getPatronus());
+        txtNeuviemeLine.setText("Hair color: " + characters.getHairColour());
+        txtDixemeLine.setText("Eye Color: " + characters.getEyeColour());
     }
 }

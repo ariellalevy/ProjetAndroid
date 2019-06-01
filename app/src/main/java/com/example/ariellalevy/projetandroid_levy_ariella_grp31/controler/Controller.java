@@ -27,19 +27,11 @@ public class Controller implements Callback<List<HarryPotterCharacters>> {
 
     static final String BASE_URL = "https://raw.githubusercontent.com/ariellalevy/ariellalevy.github.io/master/";
     private MainActivity view;
-    private Main2Activity view2;
     private SharedPreferences sharedPreferences;
-    private String donnee="characters";
 
     public Controller(MainActivity view, SharedPreferences sharedPreferences) {
         this.view = view;
         this.sharedPreferences = sharedPreferences;
-    }
-
-    public Controller(Main2Activity view2, SharedPreferences sharedPreferences, String donnee) {
-        this.view2 = view2;
-        this.sharedPreferences = sharedPreferences;
-        this.donnee = donnee;
     }
 
     public void start() {
@@ -53,7 +45,7 @@ public class Controller implements Callback<List<HarryPotterCharacters>> {
                 .build();
 
         HarryPotterRestAPI harryPotterRestAPI = retrofit.create(HarryPotterRestAPI.class);
-        Call<List<HarryPotterCharacters>> call =  harryPotterRestAPI.getCharactersList(donnee);
+        Call<List<HarryPotterCharacters>> call =  harryPotterRestAPI.getCharactersList();
         call.enqueue(this);
     }
 

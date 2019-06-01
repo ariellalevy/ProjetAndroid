@@ -8,7 +8,9 @@ import retrofit2.http.GET;
 import retrofit2.http.Path;
 
 public interface HarryPotterRestAPI {
+    @GET("characters.json")
+    Call<List<HarryPotterCharacters>> getCharactersList();
     @GET("{user}.json")
-    Call<List<HarryPotterCharacters>> getCharactersList(@Path("user") String user);
     Call<HarryPotterCharacters> getCharacters(@Path("user") String user);
+
 }
