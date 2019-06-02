@@ -5,8 +5,14 @@ import com.example.ariellalevy.projetandroid_levy_ariella_grp31.model.HarryPotte
 import com.example.ariellalevy.projetandroid_levy_ariella_grp31.vue.Main2Activity;
 
 import android.content.SharedPreferences;
+import android.text.TextUtils;
+
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.google.gson.reflect.TypeToken;
+
+import java.lang.reflect.Type;
+
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -45,7 +51,7 @@ public class Controller2 implements Callback<HarryPotterCharacters> {
     public void onResponse(Call<HarryPotterCharacters> call, Response<HarryPotterCharacters> response) {
         if(response.isSuccessful()) {
             HarryPotterCharacters HarryPotter = response.body();
-            //storeData(HarryPotterList);
+            storeData(HarryPotter);
             view.showCharacters(HarryPotter);
         } else {
             System.out.println(response.errorBody());
@@ -54,27 +60,27 @@ public class Controller2 implements Callback<HarryPotterCharacters> {
 
     @Override
     public void onFailure(Call<HarryPotterCharacters> call, Throwable t) {
-        //List<HarryPotterCharacters> HarryPotterList = getDataFromCache();
-        //view.showCharacters(HarryPotterList);
+        HarryPotterCharacters HarryPotter = getDataFromCache();
+        view.showCharacters(HarryPotter);
         t.printStackTrace();
     }
 
-    /*private void storeData(List<HarryPotterCharacters> HarryPotterList) {
+    private void storeData(HarryPotterCharacters HarryPotterList) {
         Gson gson = new Gson();
         String HarryPotterListString = gson.toJson(HarryPotterList);
         sharedPreferences
                 .edit()
-                .putString("cle_string", HarryPotterListString)
+                .putString("cle_string" + donnee, HarryPotterListString)
                 .apply();
     }
 
-    private List<HarryPotterCharacters> getDataFromCache() {
-        String HarryPotterListString = sharedPreferences.getString("cle_string", "");
+    private HarryPotterCharacters getDataFromCache() {
+        String HarryPotterListString = sharedPreferences.getString("cle_string"  + donnee, "");
         if(HarryPotterListString != null && !TextUtils.isEmpty(HarryPotterListString)){
-            Type listType = new TypeToken<List<HarryPotterCharacters>>(){}.getType();
-            List<HarryPotterCharacters> HarryPotterList = new Gson().fromJson(HarryPotterListString, listType);
-            return HarryPotterList;
+            Type listType = new TypeToken<HarryPotterCharacters>(){}.getType();
+            HarryPotterCharacters HarryPotter = new Gson().fromJson(HarryPotterListString, listType);
+            return HarryPotter;
         }
-        return new ArrayList<>();
-    }*/
+        return new HarryPotterCharacters();
+    }
 }
