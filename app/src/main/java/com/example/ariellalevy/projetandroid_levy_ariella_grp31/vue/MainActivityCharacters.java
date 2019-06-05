@@ -1,43 +1,37 @@
 package com.example.ariellalevy.projetandroid_levy_ariella_grp31.vue;
 
 import android.content.Context;
-import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.ImageView;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.ariellalevy.projetandroid_levy_ariella_grp31.R;
-import com.example.ariellalevy.projetandroid_levy_ariella_grp31.controler.ControllerFilm;
+import com.example.ariellalevy.projetandroid_levy_ariella_grp31.controler.ControllerCharacters;
+import com.example.ariellalevy.projetandroid_levy_ariella_grp31.model.HarryPotterCharacters;
 
-public class MainActivity extends AppCompatActivity {
-    public ImageView imageView;
-    public TextView txtFirstLine;
-    public TextView txtSecondLine;
+import java.util.List;
 
-    protected void onCreate(Bundle savedInstanceState){
+public class MainActivityCharacters extends AppCompatActivity {
+
+    //Déclaration des variables.
+    private RecyclerView recyclerView;
+    private RecyclerView.Adapter adapter;
+    private RecyclerView.LayoutManager layoutManager;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        txtFirstLine = (TextView) findViewById(R.id.firstLine);
-        txtSecondLine = (TextView) findViewById(R.id.secondLine);
-        txtFirstLine.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                Intent mainActivity = new Intent(v.getContext(), MainActivityFilms.class);
-                v.getContext().startActivity(mainActivity);
-            }
-        });
-        txtSecondLine.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                Intent mainActivity = new Intent(v.getContext(), MainActivityCharacters.class);
-                v.getContext().startActivity(mainActivity);
-            }
-        });
+        setContentView(R.layout.activity_main_characters_and_films);
+        SharedPreferences sharedPreferences = this.getSharedPreferences("user_prefs", Context.MODE_PRIVATE);
+        ControllerCharacters controller = new ControllerCharacters(this,sharedPreferences);
+        controller.start();
     }
 
     @Override
@@ -68,5 +62,14 @@ public class MainActivity extends AppCompatActivity {
                 return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    public void showList(List<HarryPotterCharacters> charactersList) {
+        recyclerView = (RecyclerView) findViewById(R.id.my_recycler_view);
+        layoutManager = new LinearLayoutManager(this);
+        recyclerView.setHasFixedSize(true);
+        recyclerView.setLayoutManager(layoutManager);
+        adapter = new AdapterCharacters(charactersList);
+        recyclerView.setAdapter(adapter);
     }
 }

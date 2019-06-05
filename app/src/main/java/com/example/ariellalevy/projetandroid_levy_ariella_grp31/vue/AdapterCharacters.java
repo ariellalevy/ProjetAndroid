@@ -18,7 +18,7 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.List;
 
-public class Adapter extends RecyclerView.Adapter<Holder> {
+public class AdapterCharacters extends RecyclerView.Adapter<HolderCharacters> {
 
     public  Context context;
     private List<HarryPotterCharacters> values;
@@ -33,34 +33,20 @@ public class Adapter extends RecyclerView.Adapter<Holder> {
         notifyItemRemoved(position);
     }
 
-    public Adapter(List<HarryPotterCharacters> Dataset) {
+    public AdapterCharacters(List<HarryPotterCharacters> Dataset) {
         values = Dataset;
     }
 
     @Override
-    public Holder onCreateViewHolder(ViewGroup parent,
-                                         int viewType) {
+    public HolderCharacters onCreateViewHolder(ViewGroup parent,
+                                               int viewType) {
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
         View v = inflater.inflate(R.layout.row_layout, parent, false);
-        Holder vh = new Holder(v);
+        HolderCharacters vh = new HolderCharacters(v);
         return vh;
     }
 
-    public Bitmap getBitmapFromURL(String src) {
-        try {
-            URL url = new URL(src);
-            HttpURLConnection connection = (HttpURLConnection) url.openConnection();
-            connection.setDoInput(true);
-            connection.connect();
-            InputStream input = connection.getInputStream();
-            Bitmap myBitmap = BitmapFactory.decodeStream(input);
-            return myBitmap;
-        } catch (IOException e) {
-            e.printStackTrace();
-            return null;
-        }
-    }
-    public void onBindViewHolder(Holder holder, final int position) {
+    public void onBindViewHolder(HolderCharacters holder, final int position) {
         final HarryPotterCharacters currentCharacters = values.get(position);
         holder.txtFirstLine.setText(currentCharacters.getName());
         holder.txtFooter.setText("Actor: " + currentCharacters.getActor());

@@ -38,6 +38,7 @@
         android:layout_toRightOf="@id/icon"
         android:gravity="center_vertical"
         android:text="Example application"
+        android:layout_marginBottom="8dp"
         android:textSize="16sp" />
 
 </RelativeLayout>

@@ -5,8 +5,7 @@ import android.text.TextUtils;
 
 import com.example.ariellalevy.projetandroid_levy_ariella_grp31.HarryPotterRestAPI;
 import com.example.ariellalevy.projetandroid_levy_ariella_grp31.model.HarryPotterCharacters;
-import com.example.ariellalevy.projetandroid_levy_ariella_grp31.vue.Main2Activity;
-import com.example.ariellalevy.projetandroid_levy_ariella_grp31.vue.MainActivity;
+import com.example.ariellalevy.projetandroid_levy_ariella_grp31.vue.MainActivityCharacters;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
@@ -20,16 +19,15 @@ import retrofit2.Callback;
 import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
-import retrofit2.http.GET;
 
 
-public class Controller implements Callback<List<HarryPotterCharacters>> {
+public class ControllerCharacters implements Callback<List<HarryPotterCharacters>> {
 
     static final String BASE_URL = "https://raw.githubusercontent.com/ariellalevy/ariellalevy.github.io/master/";
-    private MainActivity view;
+    private MainActivityCharacters view;
     private SharedPreferences sharedPreferences;
 
-    public Controller(MainActivity view, SharedPreferences sharedPreferences) {
+    public ControllerCharacters(MainActivityCharacters view, SharedPreferences sharedPreferences) {
         this.view = view;
         this.sharedPreferences = sharedPreferences;
     }
