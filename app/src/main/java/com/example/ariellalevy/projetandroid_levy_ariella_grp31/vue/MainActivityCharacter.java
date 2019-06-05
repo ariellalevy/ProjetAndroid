@@ -1,20 +1,24 @@
 package com.example.ariellalevy.projetandroid_levy_ariella_grp31.vue;
 
 import com.example.ariellalevy.projetandroid_levy_ariella_grp31.R;
-import com.example.ariellalevy.projetandroid_levy_ariella_grp31.controler.Controller2;
+import com.example.ariellalevy.projetandroid_levy_ariella_grp31.controler.ControllerCharacter;
 import com.example.ariellalevy.projetandroid_levy_ariella_grp31.model.HarryPotterCharacters;
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.graphics.Typeface;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import com.squareup.picasso.Picasso;
 
-public class Main2Activity extends Activity {
+public class MainActivityCharacter extends AppCompatActivity {
     public ImageView imageView;
     public TextView txtFirstLine;
     public TextView txtSecondLine;
@@ -29,12 +33,42 @@ public class Main2Activity extends Activity {
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main2);
+        setContentView(R.layout.activity_main_character);
         Intent activ = getIntent();
         String donnee = activ.getStringExtra("donnee");
         SharedPreferences sharedPreferences = this.getSharedPreferences("user_prefs", Context.MODE_PRIVATE);
-        Controller2 controller = new Controller2(this,sharedPreferences,donnee);
+        ControllerCharacter controller = new ControllerCharacter(this,sharedPreferences,donnee);
         controller.start();
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu){
+        super.onCreateOptionsMenu(menu);
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item){
+        Intent mainActivity;
+        int id = item.getItemId();
+        switch (id){
+            case R.id.film:
+                Toast.makeText(this, item.getTitle(), Toast.LENGTH_SHORT).show();
+                mainActivity = new Intent(this, MainActivityFilms.class);
+                this.startActivity(mainActivity);
+                return true;
+            case R.id.characters:
+                mainActivity = new Intent(this, MainActivityCharacters.class);
+                this.startActivity(mainActivity);
+                return true;
+            case R.id.home:
+                mainActivity = new Intent(this, MainActivity.class);
+                this.startActivity(mainActivity);
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     public void showCharacters(HarryPotterCharacters characters) {

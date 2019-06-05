@@ -1,12 +1,12 @@
 package com.example.ariellalevy.projetandroid_levy_ariella_grp31.controler;
 
 import com.example.ariellalevy.projetandroid_levy_ariella_grp31.HarryPotterRestAPI;
-import com.example.ariellalevy.projetandroid_levy_ariella_grp31.model.HarryPotterCharacters;
-import com.example.ariellalevy.projetandroid_levy_ariella_grp31.vue.Main2Activity;
+import com.example.ariellalevy.projetandroid_levy_ariella_grp31.model.HarryPotterFilms;
 
 import android.content.SharedPreferences;
 import android.text.TextUtils;
 
+import com.example.ariellalevy.projetandroid_levy_ariella_grp31.vue.MainActivityFilm;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
@@ -19,13 +19,13 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class Controller2 implements Callback<HarryPotterCharacters> {
+public class ControllerFilm implements Callback<HarryPotterFilms> {
     static final String BASE_URL = "https://raw.githubusercontent.com/ariellalevy/ariellalevy.github.io/master/";
-    private Main2Activity view;
+    private MainActivityFilm view;
     private SharedPreferences sharedPreferences;
     private String donnee;
 
-    public Controller2(Main2Activity view, SharedPreferences sharedPreferences, String donnee) {
+    public ControllerFilm(MainActivityFilm view, SharedPreferences sharedPreferences, String donnee) {
         this.view = view;
         this.sharedPreferences = sharedPreferences;
         this.donnee = donnee;
@@ -43,29 +43,29 @@ public class Controller2 implements Callback<HarryPotterCharacters> {
 
         HarryPotterRestAPI harryPotterRestAPI = retrofit.create(HarryPotterRestAPI.class);
 
-        Call<HarryPotterCharacters> call = harryPotterRestAPI.getCharacters(donnee);
+        Call<HarryPotterFilms> call = harryPotterRestAPI.getFilm(donnee);
         call.enqueue(this);
     }
 
     @Override
-    public void onResponse(Call<HarryPotterCharacters> call, Response<HarryPotterCharacters> response) {
+    public void onResponse(Call<HarryPotterFilms> call, Response<HarryPotterFilms> response) {
         if(response.isSuccessful()) {
-            HarryPotterCharacters HarryPotter = response.body();
+            HarryPotterFilms HarryPotter = response.body();
             storeData(HarryPotter);
-            view.showCharacters(HarryPotter);
+            view.showFilm(HarryPotter);
         } else {
             System.out.println(response.errorBody());
         }
     }
 
     @Override
-    public void onFailure(Call<HarryPotterCharacters> call, Throwable t) {
-        HarryPotterCharacters HarryPotter = getDataFromCache();
-        view.showCharacters(HarryPotter);
+    public void onFailure(Call<HarryPotterFilms> call, Throwable t) {
+        HarryPotterFilms HarryPotter = getDataFromCache();
+        view.showFilm(HarryPotter);
         t.printStackTrace();
     }
 
-    private void storeData(HarryPotterCharacters HarryPotterList) {
+    private void storeData(HarryPotterFilms HarryPotterList) {
         Gson gson = new Gson();
         String HarryPotterListString = gson.toJson(HarryPotterList);
         sharedPreferences
@@ -74,13 +74,13 @@ public class Controller2 implements Callback<HarryPotterCharacters> {
                 .apply();
     }
 
-    private HarryPotterCharacters getDataFromCache() {
+    private HarryPotterFilms getDataFromCache() {
         String HarryPotterListString = sharedPreferences.getString("cle_string"  + donnee, "");
         if(HarryPotterListString != null && !TextUtils.isEmpty(HarryPotterListString)){
-            Type listType = new TypeToken<HarryPotterCharacters>(){}.getType();
-            HarryPotterCharacters HarryPotter = new Gson().fromJson(HarryPotterListString, listType);
+            Type listType = new TypeToken<HarryPotterFilms>(){}.getType();
+            HarryPotterFilms HarryPotter = new Gson().fromJson(HarryPotterListString, listType);
             return HarryPotter;
         }
-        return new HarryPotterCharacters();
+        return new HarryPotterFilms();
     }
 }
