@@ -10,10 +10,10 @@ crée une application qui contient au minimun
 amélioration possible 
 * Architecture 
   *  singleton
-  *. design Patterns
-  *. MVC/MVP/MVVM
-  *. injection de dépendances
-  *. principes(SOLID,KISS,DRY)
+  *  design Patterns
+  *  MVC/MVP/MVVM
+  *  injection de dépendances
+  *  principes(SOLID,KISS,DRY)
 * Gitflow
 * animation entre les ecran
 * Notification Push(firebase)
@@ -27,21 +27,20 @@ l'API rest choisi est celle vu en cour cette a dire le modèle rotfit et les don
 https://github.com/ariellalevy/ariellalevy.github.io?files=1
 )
 En attendant de découvrir l’application voici quelque image de l’application:
-Page d’accueil :
-![alt text](https://raw.githubusercontent.com/ariellalevy/ariellalevy.github.io/master/Acceuil.png)
+###Page d’accueil :
+![alt text](https://raw.githubusercontent.com/ariellalevy/ariellalevy.github.io/master/Acceuil.
 
-Liste Characters:
+###Liste Characters:
 ![alt text](https://raw.githubusercontent.com/ariellalevy/ariellalevy.github.io/master/ListeCharacters.png)
 
-
-Detail Character:
+###Detail Character:
 ![alt text](https://raw.githubusercontent.com/ariellalevy/ariellalevy.github.io/master/DetailCharacter.png)
 
-Liste film:
+###Liste film:
 ![alt text](https://raw.githubusercontent.com/ariellalevy/ariellalevy.github.io/master/ListFilms.png)
 
-Détail film:
+###Détail film:
 ![alt text](https://raw.githubusercontent.com/ariellalevy/ariellalevy.github.io/master/DetailFilm.png)
 
-Menus:
+###Menus:
 ![alt text](https://raw.githubusercontent.com/ariellalevy/ariellalevy.github.io/master/Menu.png)
