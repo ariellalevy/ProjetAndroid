@@ -29,11 +29,11 @@ https://github.com/ariellalevy/ariellalevy.github.io?files=1
 En attendant de découvrir l’application voici quelque image de l’application:
 Page d’accueil :
 
-![alt text](https://raw.githubusercontent.com/ariellalevy/ariellalevy.github.io/master/Acceuil.
+![alt text](https://raw.githubusercontent.com/ariellalevy/ariellalevy.github.io/master/Acceuil.png)
 
 Liste Characters:
 
-![alt text](https://raw.githubusercontent.com/ariellalevy/ariellalevy.github.io/master/ListeCharacters.
+![alt text](https://raw.githubusercontent.com/ariellalevy/ariellalevy.github.io/master/ListeCharacters.png)
 
 Detail Character:
 ![alt text](https://raw.githubusercontent.com/ariellalevy/ariellalevy.github.io/master/DetailCharacter.png)
