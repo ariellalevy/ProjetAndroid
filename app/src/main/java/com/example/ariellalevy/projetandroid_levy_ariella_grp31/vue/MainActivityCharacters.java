@@ -67,8 +67,8 @@ public class MainActivityCharacters extends AppCompatActivity {
     public void showList(List<HarryPotterCharacters> charactersList) {
         recyclerView = (RecyclerView) findViewById(R.id.my_recycler_view);
         layoutManager = new LinearLayoutManager(this);
-        recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(layoutManager);
+        recyclerView.setHasFixedSize(true);
         adapter = new AdapterCharacters(charactersList);
         recyclerView.setAdapter(adapter);
     }
