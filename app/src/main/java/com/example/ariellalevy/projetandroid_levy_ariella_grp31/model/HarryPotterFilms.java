@@ -7,6 +7,11 @@ public class HarryPotterFilms {
     String resume;
     String producer;
     String image;
+    String video;
+
+    public String getVideo() { return video; }
+
+    public void setVideo(String video) { this.video = video;}
 
     public String getName() {
         return name;

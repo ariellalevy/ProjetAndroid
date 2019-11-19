@@ -24,21 +24,24 @@
         android:layout_toRightOf="@id/icon"
         android:ellipsize="marquee"
         android:text="Description"
+        android:textColor="@color/colorWhite"
         android:textSize="12sp"
         android:singleLine="true" />
 
     <TextView
         android:id="@+id/firstLine"
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_above="@id/secondLine"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentTop="true"
+        android:layout_height="27dp"
         android:layout_alignWithParentIfMissing="true"
+        android:layout_above="@id/secondLine"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="9dp"
+        android:layout_marginBottom="-1dp"
         android:layout_toRightOf="@id/icon"
         android:gravity="center_vertical"
         android:text="Example application"
-        android:layout_marginBottom="8dp"
+        android:textColor="@color/colorWhite"
         android:textSize="16sp" />
 
 </RelativeLayout>

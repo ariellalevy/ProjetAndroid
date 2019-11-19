@@ -6,17 +6,23 @@ public class HarryPotterCharacters {
     String gender;
     String house;
     String dateOfBirth;
-    //int yearOfBirth;
     String ancestry;
     String eyeColour;
     String hairColour;
-    //Wand wand;
     String patronus;
-    Boolean hogwartsStudent;
-    Boolean hogwartsStaff;
     String actor;
-    Boolean alive;
     String image;
+    String resumer;
+
+    public String getResumer() {
+        return resumer;
+    }
+
+    public void setResumer(String resumer) {
+        this.resumer = resumer;
+    }
+
+
 
     public String getName() {
         return name;
@@ -58,14 +64,6 @@ public class HarryPotterCharacters {
         this.dateOfBirth = dateOfBirth;
     }
 
-    /*public int getYearOfBirth() {
-        return yearOfBirth;
-    }
-
-    public void setYearOfBirth(int yearOfBirth) {
-        this.yearOfBirth = yearOfBirth;
-    }*/
-
     public String getAncestry() {
         return ancestry;
     }
@@ -90,14 +88,6 @@ public class HarryPotterCharacters {
         this.hairColour = hairColour;
     }
 
-    /*public Wand getWand() {
-        return wand;
-    }
-
-    public void setWand(Wand wand) {
-        this.wand = wand;
-    }*/
-
     public String getPatronus() {
         return patronus;
     }
@@ -106,36 +96,12 @@ public class HarryPotterCharacters {
         this.patronus = patronus;
     }
 
-    public Boolean getHogwartsStudent() {
-        return hogwartsStudent;
-    }
-
-    public void setHogwartsStudent(Boolean hogwartsStudent) {
-        this.hogwartsStudent = hogwartsStudent;
-    }
-
-    public Boolean getHogwartsStaff() {
-        return hogwartsStaff;
-    }
-
-    public void setHogwartsStaff(Boolean hogwartsStaff) {
-        this.hogwartsStaff = hogwartsStaff;
-    }
-
     public String getActor() {
         return actor;
     }
 
     public void setActor(String actor) {
         this.actor = actor;
-    }
-
-    public Boolean getAlive() {
-        return alive;
-    }
-
-    public void setAlive(Boolean alive) {
-        this.alive = alive;
     }
 
     public String getImage() {

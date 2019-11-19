@@ -30,6 +30,7 @@ public class MainActivityCharacter extends AppCompatActivity {
     public TextView txtHuitiemeLine;
     public TextView txtNeuviemeLine;
     public TextView txtDixemeLine;
+    public TextView txtOnziemeLine;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -83,6 +84,7 @@ public class MainActivityCharacter extends AppCompatActivity {
         txtHuitiemeLine = (TextView) findViewById(R.id.huitiemeLine);
         txtNeuviemeLine = (TextView) findViewById(R.id.neuviemeLine);
         txtDixemeLine = (TextView) findViewById(R.id.dixemeLine);
+        txtOnziemeLine = (TextView) findViewById(R.id.onziemeLine);
         Picasso.with(this).load(characters.getImage()).into(imageView);
         txtFirstLine.setText(characters.getName());
         txtSecondLine.setText("Actor: " + characters.getActor());
@@ -94,5 +96,6 @@ public class MainActivityCharacter extends AppCompatActivity {
         txtHuitiemeLine.setText("Patronus: " + characters.getPatronus());
         txtNeuviemeLine.setText("Hair color: " + characters.getHairColour());
         txtDixemeLine.setText("Eye Color: " + characters.getEyeColour());
+        txtOnziemeLine.setText("Résumé: " + characters.getResumer());
     }
 }

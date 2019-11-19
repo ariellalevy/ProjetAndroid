@@ -4,110 +4,147 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/poudlard"
+    android:scrollbars="vertical"
     tools:context=".vue.MainActivityCharacter">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="24dp"
-        android:layout_marginLeft="24dp"
-        android:orientation="vertical">
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
 
-        <ImageView
-            android:id="@+id/icon"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="400px"
-            android:layout_marginBottom="8dp"
-            android:src="@mipmap/ic_launcher" />
+            android:layout_height="match_parent"
+            android:layout_marginLeft="24dp"
+            android:layout_marginTop="24dp"
+            android:orientation="vertical"
+            android:scrollbars="vertical">
 
-        <TextView
-            android:id="@+id/firstLine"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
-            android:text="TextView"
-            app:fontFamily="@font/bigelow_rules"
-            android:textSize="24sp" />
+            <ImageView
+                android:id="@+id/icon"
+                android:layout_width="match_parent"
+                android:layout_height="400px"
+                android:layout_marginBottom="8dp"
+                android:src="@mipmap/ic_launcher" />
 
-        <TextView
-            android:id="@+id/secondLine"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom ="8dp"
-            app:fontFamily="@font/bigelow_rules"
-            android:textSize="20sp"
-            android:text="TextView" />
+            <TextView
+                android:id="@+id/firstLine"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:text="TextView"
+                android:textColor="@color/colorWhite"
+                android:textSize="30sp"
+                app:fontFamily="@font/bigelow_rules" />
 
-        <TextView
-            android:id="@+id/troisiemeLine"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom ="8dp"
-            app:fontFamily="@font/bigelow_rules"
-            android:textSize="20sp"
-            android:text="TextView" />
+            <TextView
+                android:id="@+id/secondLine"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:text="TextView"
+                android:textColor="@color/colorWhite"
+                android:textSize="28sp"
+                app:fontFamily="@font/bigelow_rules" />
 
-        <TextView
-            android:id="@+id/quatriemeLine"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom ="8dp"
-            app:fontFamily="@font/bigelow_rules"
-            android:textSize="20sp"
-            android:text="TextView" />
+            <TextView
+                android:id="@+id/troisiemeLine"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:textColor="@color/colorWhite"
+                android:text="TextView"
+                android:textSize="28sp"
+                app:fontFamily="@font/bigelow_rules" />
 
-        <TextView
-            android:id="@+id/cinquiemeLine"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom ="8dp"
-            app:fontFamily="@font/bigelow_rules"
-            android:textSize="20sp"
-            android:text="TextView" />
+            <TextView
+                android:id="@+id/quatriemeLine"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:textColor="@color/colorWhite"
+                android:text="TextView"
+                android:textSize="28sp"
+                app:fontFamily="@font/bigelow_rules" />
 
-        <TextView
-            android:id="@+id/sixemeLine"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom ="8dp"
-            app:fontFamily="@font/bigelow_rules"
-            android:textSize="20sp"
-            android:text="TextView" />
+            <TextView
+                android:id="@+id/cinquiemeLine"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:textColor="@color/colorWhite"
+                android:text="TextView"
+                android:textSize="28sp"
+                app:fontFamily="@font/bigelow_rules" />
 
-        <TextView
-            android:id="@+id/septiemeLine"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom ="8dp"
-            app:fontFamily="@font/bigelow_rules"
-            android:textSize="20sp"
-            android:text="TextView" />
+            <TextView
+                android:id="@+id/sixemeLine"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:textColor="@color/colorWhite"
+                android:text="TextView"
+                android:textSize="28sp"
+                app:fontFamily="@font/bigelow_rules" />
 
-        <TextView
-            android:id="@+id/huitiemeLine"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom ="8dp"
-            app:fontFamily="@font/bigelow_rules"
-            android:textSize="20sp"
-            android:text="TextView" />
+            <TextView
+                android:id="@+id/septiemeLine"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:textColor="@color/colorWhite"
+                android:text="TextView"
+                android:textSize="28sp"
+                app:fontFamily="@font/bigelow_rules" />
 
-        <TextView
-            android:id="@+id/neuviemeLine"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom ="8dp"
-            app:fontFamily="@font/bigelow_rules"
-            android:textSize="20sp"
-            android:text="TextView" />
+            <TextView
+                android:id="@+id/huitiemeLine"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:text="TextView"
+                android:textColor="@color/colorWhite"
+                android:textSize="28sp"
+                app:fontFamily="@font/bigelow_rules" />
 
-        <TextView
-            android:id="@+id/dixemeLine"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom ="8dp"
-            app:fontFamily="@font/bigelow_rules"
-            android:textSize="20sp"
-            android:text="TextView" />
-    </LinearLayout>
+            <TextView
+                android:id="@+id/neuviemeLine"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:text="TextView"
+                android:textColor="@color/colorWhite"
+                android:textSize="28sp"
+                app:fontFamily="@font/bigelow_rules" />
+
+            <TextView
+                android:id="@+id/dixemeLine"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:text="TextView"
+                android:textColor="@color/colorWhite"
+                android:textSize="28sp"
+                app:fontFamily="@font/bigelow_rules" />
+
+            <TextView
+                android:id="@+id/onziemeLine"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:text="TextView"
+                android:textColor="@color/colorWhite"
+                android:textSize="28sp"
+                app:fontFamily="@font/bigelow_rules" />
+
+            <TextView
+                android:id="@+id/blanc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:text=""
+                android:textSize="20sp"
+                app:fontFamily="@font/bigelow_rules" />
+        </LinearLayout>
+    </ScrollView>
 </android.support.constraint.ConstraintLayout>

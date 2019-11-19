@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorDark"
     tools:context=".vue.MainActivity">
 
     <LinearLayout
@@ -27,6 +28,7 @@
             android:text="Films"
             android:gravity="center"
             app:fontFamily="@font/bigelow_rules"
+            android:textColor="@color/colorWhite"
             android:textSize="60sp" />
 
         <TextView
@@ -35,6 +37,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom ="8dp"
             app:fontFamily="@font/bigelow_rules"
+            android:textColor="@color/colorWhite"
             android:textSize="60sp"
             android:gravity="center"
             android:text="Characters" />
