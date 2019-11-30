@@ -4,20 +4,21 @@ Ce document présente l'application a réalisée pour le moodule de programmatio
 
 ## Consigne
 crée une application qui contient au minimun
-* Deux ecran: Un ecran avec une liste et un écran avec un détail de l'item
+* Fragement
 * Appel WebService a une API rest
-* Stockage des donnée en cache
-amélioration possible 
-* Architecture 
+* Design
+* Architecture
   *  Singleton
   *  Design Patterns
   *  MVC/MVP/MVVM
   *  Injection de dépendances
   *  Principes(SOLID,KISS,DRY)
 * Gitflow
-* Animation entre les ecran
-* Notification Push(firebase)
-* Autre Fonctionnalité
+Amélioration possible
+* Clean Architecture
+* RxJava ou Coroutines
+* Tests Unitaires
+* Architecture MVVM
 
 ## Travail réalisée
  
@@ -26,6 +27,8 @@ l'API rest choisi est celle vu en cour cette a dire le modèle rotfit et les don
 [apiRest](
 https://github.com/ariellalevy/ariellalevy.github.io?files=1
 )
+Le but de cette application était de crée une application pour les fans de la saga Harry Potter cette application contient une liste des personnage de la saga avec leur détail ainsi que la liste des films avec leur détail et vidéo bande annonce de celle ci.
+Dans le future il sera peut-etre prevu de changer la partie menu pour donnée accès au monde des annimaux fanstatique. une galerie photo sera peut-etre ajouté
 En attendant de découvrir l’application voici quelque image de l’application:
 
 Page d’accueil :
@@ -47,6 +50,14 @@ Détail film:
 
 ![alt text](https://raw.githubusercontent.com/ariellalevy/ariellalevy.github.io/master/DetailFilm.png)
 
+Vidéo films:
+
+![alt text](https://raw.githubusercontent.com/ariellalevy/ariellalevy.github.io/master/Video.png)
+
 Menus:
 
 ![alt text](https://raw.githubusercontent.com/ariellalevy/ariellalevy.github.io/master/Menu.png)
+
+Navigation Bar:
+
+![alt text](https://raw.githubusercontent.com/ariellalevy/ariellalevy.github.io/master/Navigation.png)
