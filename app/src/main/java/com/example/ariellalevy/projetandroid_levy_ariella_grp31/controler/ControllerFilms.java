@@ -4,10 +4,8 @@ import android.content.SharedPreferences;
 import android.text.TextUtils;
 
 import com.example.ariellalevy.projetandroid_levy_ariella_grp31.HarryPotterRestAPI;
-import com.example.ariellalevy.projetandroid_levy_ariella_grp31.model.HarryPotterCharacters;
 import com.example.ariellalevy.projetandroid_levy_ariella_grp31.model.HarryPotterFilms;
-import com.example.ariellalevy.projetandroid_levy_ariella_grp31.vue.MainActivityCharacters;
-import com.example.ariellalevy.projetandroid_levy_ariella_grp31.vue.MainActivityFilms;
+import com.example.ariellalevy.projetandroid_levy_ariella_grp31.vue.FragementFilms;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
@@ -24,10 +22,10 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class ControllerFilms implements Callback<List<HarryPotterFilms>> {
     static final String BASE_URL = "https://raw.githubusercontent.com/ariellalevy/ariellalevy.github.io/master/";
-    private MainActivityFilms view;
+    private FragementFilms view;
     private SharedPreferences sharedPreferences;
 
-    public ControllerFilms(MainActivityFilms view, SharedPreferences sharedPreferences) {
+    public ControllerFilms(FragementFilms view, SharedPreferences sharedPreferences) {
         this.view = view;
         this.sharedPreferences = sharedPreferences;
     }

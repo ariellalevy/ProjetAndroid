@@ -30,10 +30,10 @@ public class HolderFilms extends RecyclerView.ViewHolder implements View.OnClick
 
     public void onClick(View v) {
         Toast.makeText(v.getContext(), txtFirstLine.getText(), Toast.LENGTH_SHORT).show();
+        FragementFilm fragementFilm = new FragementFilm();
         v.startAnimation(animation);
-        Intent main2Activity = new Intent(v.getContext(), MainActivityFilm.class);
-        main2Activity.putExtra("donnee", txtFirstLine.getText());
-        v.getContext().startActivity(main2Activity);
+        ((MainActivity)v.getContext()).addAgrument("donnee", txtFirstLine.getText(), fragementFilm);
+        ((MainActivity)v.getContext()).loadFragment(fragementFilm);
 
     }
 }

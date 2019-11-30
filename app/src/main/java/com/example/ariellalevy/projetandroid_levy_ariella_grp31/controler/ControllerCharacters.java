@@ -5,7 +5,7 @@ import android.text.TextUtils;
 
 import com.example.ariellalevy.projetandroid_levy_ariella_grp31.HarryPotterRestAPI;
 import com.example.ariellalevy.projetandroid_levy_ariella_grp31.model.HarryPotterCharacters;
-import com.example.ariellalevy.projetandroid_levy_ariella_grp31.vue.MainActivityCharacters;
+import com.example.ariellalevy.projetandroid_levy_ariella_grp31.vue.FragementCharacters;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
@@ -24,11 +24,11 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class ControllerCharacters implements Callback<List<HarryPotterCharacters>> {
 
     static final String BASE_URL = "https://raw.githubusercontent.com/ariellalevy/ariellalevy.github.io/master/";
-    private MainActivityCharacters view;
+    private FragementCharacters view2;
     private SharedPreferences sharedPreferences;
 
-    public ControllerCharacters(MainActivityCharacters view, SharedPreferences sharedPreferences) {
-        this.view = view;
+    public ControllerCharacters(FragementCharacters view2, SharedPreferences sharedPreferences) {
+        this.view2 = view2;
         this.sharedPreferences = sharedPreferences;
     }
 
@@ -52,7 +52,8 @@ public class ControllerCharacters implements Callback<List<HarryPotterCharacters
         if(response.isSuccessful()) {
             List<HarryPotterCharacters> HarryPotterList = response.body();
             storeData(HarryPotterList);
-            view.showList(HarryPotterList);
+            view2.showList(HarryPotterList);
+
         } else {
             System.out.println(response.errorBody());
         }
@@ -61,7 +62,7 @@ public class ControllerCharacters implements Callback<List<HarryPotterCharacters
     @Override
     public void onFailure(Call<List<HarryPotterCharacters>> call, Throwable t) {
         List<HarryPotterCharacters> HarryPotterList = getDataFromCache();
-        view.showList(HarryPotterList);
+        view2.showList(HarryPotterList);
         t.printStackTrace();
     }
 
