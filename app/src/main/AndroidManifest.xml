@@ -20,9 +20,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".vue.MainActivityCharacters" />
-        <activity android:name=".vue.MainActivityCharacter" />
-        <activity android:name=".vue.MainActivityFilms" />
         <activity android:name=".vue.MainActivityFilm" />
 
         <meta-data

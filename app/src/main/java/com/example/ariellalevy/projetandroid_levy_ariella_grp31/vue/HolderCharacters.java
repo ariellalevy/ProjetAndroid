@@ -1,6 +1,7 @@
 package com.example.ariellalevy.projetandroid_levy_ariella_grp31.vue;
 
 import android.content.Intent;
+import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.view.animation.Animation;
@@ -29,11 +30,10 @@ public class HolderCharacters extends RecyclerView.ViewHolder implements View.On
     }
 
     public void onClick(View v) {
-        Toast.makeText(v.getContext(), txtFirstLine.getText(), Toast.LENGTH_SHORT).show();
+        //Toast.makeText(v.getContext(), txtFirstLine.getText(), Toast.LENGTH_SHORT).show();
+        FragementCharacter fragementCharacter = new FragementCharacter();
         v.startAnimation(animation);
-        Intent main2Activity = new Intent(v.getContext(), MainActivityCharacter.class);
-        main2Activity.putExtra("donnee", txtFirstLine.getText());
-        v.getContext().startActivity(main2Activity);
-
+        ((MainActivity)v.getContext()).addAgrument("donnee", txtFirstLine.getText(), fragementCharacter);
+        ((MainActivity)v.getContext()).loadFragment(fragementCharacter);
     }
 }

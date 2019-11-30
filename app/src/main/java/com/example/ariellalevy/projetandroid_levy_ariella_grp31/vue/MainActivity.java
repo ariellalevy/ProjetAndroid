@@ -4,7 +4,11 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.support.design.widget.BottomNavigationView;
+import android.support.v4.app.Fragment;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -16,28 +20,36 @@ import android.widget.Toast;
 import com.example.ariellalevy.projetandroid_levy_ariella_grp31.R;
 import com.example.ariellalevy.projetandroid_levy_ariella_grp31.controler.ControllerFilm;
 
-public class MainActivity extends AppCompatActivity {
-    public ImageView imageView;
-    public TextView txtFirstLine;
-    public TextView txtSecondLine;
+public class MainActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
+    //aide: https://github.com/mitchtabian/Fragments
 
-    protected void onCreate(Bundle savedInstanceState){
+    private static final String TAG = "MainActivity";
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        txtFirstLine = (TextView) findViewById(R.id.firstLine);
-        txtSecondLine = (TextView) findViewById(R.id.secondLine);
-        txtFirstLine.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                Intent mainActivity = new Intent(v.getContext(), MainActivityFilms.class);
-                v.getContext().startActivity(mainActivity);
-            }
-        });
-        txtSecondLine.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                Intent mainActivity = new Intent(v.getContext(), MainActivityCharacters.class);
-                v.getContext().startActivity(mainActivity);
-            }
-        });
+        BottomNavigationView navigation = findViewById(R.id.navigation);
+        navigation.setOnNavigationItemSelectedListener(this);
+        loadFragment(new FragementMenuPrincipal());
+    }
+
+    public boolean loadFragment(Fragment fragment){
+        if(fragment != null){
+            getSupportFragmentManager()
+                    .beginTransaction()
+                    .replace(R.id.container,fragment)
+                    .commit();
+
+            return true;
+        }
+        return false;
+    }
+
+    public void addAgrument(String key, CharSequence value, Fragment fragment){
+        Bundle args = new Bundle();
+        args.putCharSequence(key, value);
+        fragment.setArguments(args);
     }
 
     @Override
@@ -52,15 +64,16 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item){
         Intent mainActivity;
         int id = item.getItemId();
+        //Toast.makeText(this, item.getTitle(), Toast.LENGTH_SHORT).show();
+
         switch (id){
             case R.id.film:
-                Toast.makeText(this, item.getTitle(), Toast.LENGTH_SHORT).show();
-                mainActivity = new Intent(this, MainActivityFilms.class);
-                this.startActivity(mainActivity);
+                //((MainActivity)mViewPager.getContext()).setViewPager(3);
+                loadFragment(new FragementFilms ());
                 return true;
             case R.id.characters:
-                mainActivity = new Intent(this, MainActivityCharacters.class);
-                this.startActivity(mainActivity);
+                //((MainActivity)mViewPager.getContext()).setViewPager(1);
+                loadFragment(new FragementCharacters());
                 return true;
             case R.id.home:
                 mainActivity = new Intent(this, MainActivity.class);
@@ -68,5 +81,21 @@ public class MainActivity extends AppCompatActivity {
                 return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    public boolean onNavigationItemSelected(MenuItem menuItem) {
+        Fragment fragment = null;
+        switch(menuItem.getItemId()){
+            case R.id.home:
+                fragment = new FragementMenuPrincipal();
+                break;
+            case R.id.film:
+                fragment = new FragementFilms();
+                break;
+            case R.id.characters:
+                fragment = new FragementCharacters();
+                break;
+        }
+        return loadFragment(fragment);
     }
 }

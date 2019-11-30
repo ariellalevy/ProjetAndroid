@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/poudlard"
-    android:scrollbars="vertical"
-    tools:context=".vue.MainActivityCharacter">
+    android:scrollbars="vertical">
 
     <ScrollView
         android:layout_width="fill_parent"
@@ -34,8 +32,8 @@
                 android:layout_marginBottom="8dp"
                 android:text="TextView"
                 android:textColor="@color/colorWhite"
-                android:textSize="30sp"
-                app:fontFamily="@font/bigelow_rules" />
+                android:textSize="36sp"
+                app:fontFamily="@font/harrypotter" />
 
             <TextView
                 android:id="@+id/secondLine"
@@ -45,7 +43,7 @@
                 android:text="TextView"
                 android:textColor="@color/colorWhite"
                 android:textSize="28sp"
-                app:fontFamily="@font/bigelow_rules" />
+                app:fontFamily="@font/harrypotter" />
 
             <TextView
                 android:id="@+id/troisiemeLine"
@@ -55,7 +53,7 @@
                 android:textColor="@color/colorWhite"
                 android:text="TextView"
                 android:textSize="28sp"
-                app:fontFamily="@font/bigelow_rules" />
+                app:fontFamily="@font/harrypotter" />
 
             <TextView
                 android:id="@+id/quatriemeLine"
@@ -65,7 +63,7 @@
                 android:textColor="@color/colorWhite"
                 android:text="TextView"
                 android:textSize="28sp"
-                app:fontFamily="@font/bigelow_rules" />
+                app:fontFamily="@font/harrypotter" />
 
             <TextView
                 android:id="@+id/cinquiemeLine"
@@ -75,7 +73,7 @@
                 android:textColor="@color/colorWhite"
                 android:text="TextView"
                 android:textSize="28sp"
-                app:fontFamily="@font/bigelow_rules" />
+                app:fontFamily="@font/harrypotter" />
 
             <TextView
                 android:id="@+id/sixemeLine"
@@ -85,7 +83,7 @@
                 android:textColor="@color/colorWhite"
                 android:text="TextView"
                 android:textSize="28sp"
-                app:fontFamily="@font/bigelow_rules" />
+                app:fontFamily="@font/harrypotter" />
 
             <TextView
                 android:id="@+id/septiemeLine"
@@ -95,7 +93,7 @@
                 android:textColor="@color/colorWhite"
                 android:text="TextView"
                 android:textSize="28sp"
-                app:fontFamily="@font/bigelow_rules" />
+                app:fontFamily="@font/harrypotter" />
 
             <TextView
                 android:id="@+id/huitiemeLine"
@@ -105,7 +103,7 @@
                 android:text="TextView"
                 android:textColor="@color/colorWhite"
                 android:textSize="28sp"
-                app:fontFamily="@font/bigelow_rules" />
+                app:fontFamily="@font/harrypotter" />
 
             <TextView
                 android:id="@+id/neuviemeLine"
@@ -115,7 +113,7 @@
                 android:text="TextView"
                 android:textColor="@color/colorWhite"
                 android:textSize="28sp"
-                app:fontFamily="@font/bigelow_rules" />
+                app:fontFamily="@font/harrypotter" />
 
             <TextView
                 android:id="@+id/dixemeLine"
@@ -125,7 +123,7 @@
                 android:text="TextView"
                 android:textColor="@color/colorWhite"
                 android:textSize="28sp"
-                app:fontFamily="@font/bigelow_rules" />
+                app:fontFamily="@font/harrypotter" />
 
             <TextView
                 android:id="@+id/onziemeLine"
@@ -135,7 +133,7 @@
                 android:text="TextView"
                 android:textColor="@color/colorWhite"
                 android:textSize="28sp"
-                app:fontFamily="@font/bigelow_rules" />
+                app:fontFamily="@font/harrypotter" />
 
             <TextView
                 android:id="@+id/blanc"
@@ -144,7 +142,7 @@
                 android:layout_marginBottom="8dp"
                 android:text=""
                 android:textSize="20sp"
-                app:fontFamily="@font/bigelow_rules" />
+                app:fontFamily="@font/harrypotter" />
         </LinearLayout>
     </ScrollView>
 </android.support.constraint.ConstraintLayout>

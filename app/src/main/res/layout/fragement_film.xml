@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/poudlard"
-    tools:context=".vue.MainActivityFilms">
+    android:background="@drawable/poudlard">
+
     <ScrollView
         android:layout_width="fill_parent"
         android:layout_height="fill_parent">
@@ -29,15 +29,15 @@
                 android:layout_marginBottom="8dp"
                 android:text="TextView"
                 android:textColor="@color/colorWhite"
-                app:fontFamily="@font/bigelow_rules"
-                android:textSize="30sp" />
+                app:fontFamily="@font/harrypotter"
+                android:textSize="36sp" />
             <TextView
                 android:id="@+id/secondLine"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom ="8dp"
                 android:textColor="@color/colorWhite"
-                app:fontFamily="@font/bigelow_rules"
+                app:fontFamily="@font/harrypotter"
                 android:textSize="28sp"
                 android:text="TextView" />
             <TextView
@@ -46,7 +46,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom ="8dp"
                 android:textColor="@color/colorWhite"
-                app:fontFamily="@font/bigelow_rules"
+                app:fontFamily="@font/harrypotter"
                 android:textSize="28sp"
                 android:text="TextView" />
             <TextView
@@ -55,7 +55,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom ="8dp"
                 android:textColor="@color/colorWhite"
-                app:fontFamily="@font/bigelow_rules"
+                app:fontFamily="@font/harrypotter"
                 android:textSize="28sp"
                 android:text="TextView" />
             <TextView
@@ -64,7 +64,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom ="8dp"
                 android:textColor="@color/colorWhite"
-                app:fontFamily="@font/bigelow_rules"
+                app:fontFamily="@font/harrypotter"
                 android:textSize="28sp"
                 android:text="TextView" />
             <VideoView
@@ -79,7 +79,7 @@
                 android:layout_marginBottom="8dp"
                 android:text=""
                 android:textSize="20sp"
-                app:fontFamily="@font/bigelow_rules" />
+                app:fontFamily="@font/harrypotter" />
         </LinearLayout>
     </ScrollView>
 </android.support.constraint.ConstraintLayout>
